@@ -17,14 +17,14 @@ fn main() {
              .short("r")
              .long("reverse")
              .multiple(false)
-             .help("Reverses changes made by imagecondenser"))
+             .help("Reverses changes made by imagecondenser (placeholder; not implemented)"))
         .arg(Arg::with_name("threshold")
              .short("t")
              .long("threshold")
              .multiple(false)
              .takes_value(true)
              .default_value("1")
-             .help("Sets the minimum amount of rows or columns to start reducing"))
+             .help("Sets the minimum amount of pixel columns or rows to reduce"))
         .arg(Arg::with_name("INPUT")
              .help("Input file")
              .required(true)
@@ -47,7 +47,6 @@ fn main() {
         }
     );
 
-    println!("Input: {:?} Output: {:?}", inputfile, outputfile);
     if !inputfile.exists() {
         eprintln!("Input file does not exist!");
         return;
